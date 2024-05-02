@@ -1,0 +1,47 @@
+DBImportExport ver. %0%
+
+Help Parameters:
+
+DBImportExport [-export|-import] [<option>]
+    -export    
+              Exports content from the source database.
+    -import   
+              Imports content into the target database.
+
+Options:
+    -connectionString:<connectionString>
+              The connection-string used to connect to the database.
+
+	-bcp 
+		Use bcp utility for import or export data
+
+	-SP_Script
+		For Export: Export storeprocedure in script files
+		For Import: Import storeprocedure from script files
+
+	-Table_Script
+		For Export: Export table definition in script files
+		For Import: Import table definition from script files
+
+    -tables[:tableExpression1,[:tableExpression2], ...]
+              Defines one or more tables from which to script content.
+
+    -defaultScriptMode:[NotSet|Delete|NoDelete]
+              Specifies if content is scripted with deletes by default.
+    
+    -scriptDirectory:<filePath>
+              The location of script files for scripting or seeding.
+
+   -verbose:<level>
+              Specifies the output verbose level  
+        [Off | Error| Warning | Info | Verbose]
+
+	-BCP_Options:<Options>
+		For -bcp mode only.
+		[-m max_errors]  [-x] [-b batch_size] [-n] [-N] [-w] [-V (70 | 80 | 90 )] 
+		[-q] [-C { ACP | OEM | RAW | code_page } ] [-t field_term] 
+		[-r row_term] [-a packet_size] [-v] [-R] [-k] [-E] [-h"hint [,...n]"]
+		for deteails about bcp Utility - ms-help://MS.SQLCC.v10/MS.SQLSVR.v10.en/s10de_5techref/html/c0af54f5-ca4a-4995-a3a4-0ce39c30ec38.htm
+
+Table expression syntax:
+     <tableName> [Where <condition>] [With NoDelete|Delete]
